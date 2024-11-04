@@ -1,0 +1,109 @@
+{
+	"info": {
+		"_postman_id": "a576a4af-54ff-41bc-981b-5882a8faa45f",
+		"name": "CTR",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "36374221",
+		"_collection_link": "https://www.postman.com/pr2cetpro/workspace/ctr/collection/36374221-a576a4af-54ff-41bc-981b-5882a8faa45f?action=share&source=collection_link&creator=36374221"
+	},
+	"item": [
+		{
+			"name": "encrypt",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\"Hola Como estas\"\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/encrypt",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"encrypt"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "decrypt",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "a244e7160c5a6ba9af4f133a8baf644bcc82d84f4ff7c17833ee6129124a6a8738ab7a",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/decrypt",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"decrypt"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "1. Listar Mensajes Cifrados",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/messages",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"messages"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2. Listar Mensajes Descifrados",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/decryptedMessages",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"decryptedMessages"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
