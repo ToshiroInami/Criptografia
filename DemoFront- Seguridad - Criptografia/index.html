@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cifrado y Descifrado AES CTR</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; background-color: #f4f4f4; }
+        textarea { width: 100%; height: 100px; margin-bottom: 10px; }
+        button { padding: 10px 15px; background-color: #007BFF; color: white; border: none; border-radius: 5px; cursor: pointer; }
+        button:hover { background-color: #0056b3; }
+        h2 { margin-top: 20px; }
+        p { background-color: #fff; padding: 10px; border-radius: 5px; border: 1px solid #ddd; }
+    </style>
+</head>
+<body>
+    <h1>Cifrado y Descifrado AES CTR</h1>
+    <h2>Cifrar Mensaje</h2>
+    <textarea id="inputText" placeholder="Ingresa tu mensaje aquí..."></textarea>
+    <button onclick="encryptMessage()">Cifrar</button>
+    <h2>Mensaje Cifrado:</h2>
+    <p id="encryptedResult"></p>
+
+    <h2>Descifrar Mensaje</h2>
+    <textarea id="inputCipherText" placeholder="Ingresa el mensaje cifrado aquí..."></textarea>
+    <button onclick="decryptMessage()">Descifrar</button>
+    <h2>Mensaje Descifrado:</h2>
+    <p id="decryptedResult"></p>
+
+    <script>
+        async function encryptMessage() {
+            const message = document.getElementById('inputText').value;
+            const response = await fetch('http://localhost:8080/api/encrypt', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(message)
+            });
+            const encryptedMessage = await response.text();
+            document.getElementById('encryptedResult').innerText = encryptedMessage;
+        }
+
+        async function decryptMessage() {
+            const hexMessage = document.getElementById('inputCipherText').value;
+            const response = await fetch('http://localhost:8080/api/decrypt', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(hexMessage.trim())
+            });
+            const decryptedMessage = await response.text();
+            document.getElementById('decryptedResult').innerText = decryptedMessage;
+        }
+    </script>
+</body>
+</html>
