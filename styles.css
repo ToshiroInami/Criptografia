@@ -1,0 +1,143 @@
+body {
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f7fc;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  max-width: 800px;
+  width: 100%;
+  margin: 30px auto;
+}
+
+.main-title {
+  text-align: center;
+  color: #4a90e2;
+  margin-bottom: 20px;
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+
+.boxes-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.box {
+  flex: 1;
+  margin: 10px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+h2 {
+  color: #4a90e2;
+  margin-top: 0;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+h3 {
+  color: #4a90e2;
+  margin-top: 20px;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+textarea {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 1rem;
+  background-color: #f9f9f9;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+}
+
+textarea:focus {
+  border-color: #4a90e2;
+  background-color: #fff;
+  outline: none;
+}
+
+button {
+  padding: 12px 20px;
+  font-size: 1rem;
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: #357ab7;
+}
+
+button:active {
+  transform: translateY(2px);
+}
+
+p {
+  background-color: #f2f8ff;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 1rem;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  margin-bottom: 20px;
+}
+
+.notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #4caf50;
+  color: white;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  transition: opacity 0.5s ease-in-out;
+  opacity: 1;
+}
+
+.error {
+  background-color: #f44336;
+}
+
+.notification.fade-out {
+  opacity: 0;
+}
+
+.hidden {
+  display: none;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 1s ease-out;
+}
