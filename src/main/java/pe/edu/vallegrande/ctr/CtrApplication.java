@@ -1,4 +1,4 @@
-package com.example.demo;
+package pe.edu.vallegrande.ctr;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
