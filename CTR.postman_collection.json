@@ -1,10 +1,9 @@
 {
 	"info": {
-		"_postman_id": "a576a4af-54ff-41bc-981b-5882a8faa45f",
+		"_postman_id": "a2abea81-cd22-4f8c-b812-337f1e7865bf",
 		"name": "CTR",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "36374221",
-		"_collection_link": "https://www.postman.com/pr2cetpro/workspace/ctr/collection/36374221-a576a4af-54ff-41bc-981b-5882a8faa45f?action=share&source=collection_link&creator=36374221"
+		"_exporter_id": "29279701"
 	},
 	"item": [
 		{
@@ -14,7 +13,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "\"Hola Como estas\"\r\n",
+					"raw": "Hola",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -22,7 +21,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/api/encrypt",
+					"raw": "http://localhost:8080/api/encryptClickRate",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -30,7 +29,7 @@
 					"port": "8080",
 					"path": [
 						"api",
-						"encrypt"
+						"encryptClickRate"
 					]
 				}
 			},
@@ -43,7 +42,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "a244e7160c5a6ba9af4f133a8baf644bcc82d84f4ff7c17833ee6129124a6a8738ab7a",
+					"raw": "dcd0881c27528ca83429a6cbcd0d390772e4e1c4",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -51,7 +50,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/api/decrypt",
+					"raw": "http://localhost:8080/api/decryptClickRate",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -59,7 +58,7 @@
 					"port": "8080",
 					"path": [
 						"api",
-						"decrypt"
+						"decryptClickRate"
 					]
 				}
 			},
@@ -71,7 +70,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/api/messages",
+					"raw": "http://localhost:8080/api/encryptedClickRates",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -79,7 +78,7 @@
 					"port": "8080",
 					"path": [
 						"api",
-						"messages"
+						"encryptedClickRates"
 					]
 				}
 			},
@@ -91,7 +90,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/api/decryptedMessages",
+					"raw": "http://localhost:8080/api/decryptedClickRates",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -99,7 +98,7 @@
 					"port": "8080",
 					"path": [
 						"api",
-						"decryptedMessages"
+						"decryptedClickRates"
 					]
 				}
 			},
