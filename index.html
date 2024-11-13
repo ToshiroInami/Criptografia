@@ -1,53 +1,63 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cifrado y Descifrado AES CTR</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <div class="container">
-      <h1 class="main-title">CIFRADO Y DESCIFRADO</h1>
-      <div class="boxes-container">
-        <div class="box">
-          <h2>CIFRAR MENSAJE</h2>
-          <form
-            id="encryptForm"
-            onsubmit="event.preventDefault(); encryptMessage();"
-          >
-            <textarea
-              id="inputText"
-              placeholder="Ingresa tu mensaje aquí..."
-              required
-            ></textarea>
-            <button type="submit">CIFRAR</button>
-            <h3 id="encryptedLabel" class="hidden">MENSAJE CIFRADO:</h3>
-            <p id="encryptedResult" class="hidden"></p>
-          </form>
-        </div>
 
-        <div class="box">
-          <h2>DESCIFRAR MENSAJE</h2>
-          <form
-            id="decryptForm"
-            onsubmit="event.preventDefault(); decryptMessage();"
-          >
-            <textarea
-              id="inputCipherText"
-              placeholder="Ingresa el mensaje cifrado aquí..."
-              required
-            ></textarea>
-            <button type="submit">DESCIFRAR</button>
-            <h3 id="decryptedLabel" class="hidden">MENSAJE DESCIFRADO:</h3>
-            <p id="decryptedResult" class="hidden"></p>
-          </form>
-        </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cifrado y Descifrado AES CTR</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+</head>
+
+<body>
+  <div class="container">
+    <!-- Agregar la imagen en la parte superior derecha -->
+    <div class="logo-container">
+      <a href="https://www.google.com" target="_blank">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxRhwY0Bi01bhMGHuYcJxd2DciYX5XbezJ_w&s" alt="Google Logo" class="logo">
+      </a>
+    </div>
+    <h1 class="main-title">CIFRADO Y DESCIFRADO</h1>
+    <div class="boxes-container">
+      <div class="box">
+        <h2>CIFRAR MENSAJE</h2>
+        <form id="encryptForm" onsubmit="event.preventDefault(); encryptMessage();">
+          <textarea id="inputText" placeholder="Ingresa tu mensaje aquí..." required></textarea>
+          <button type="submit">CIFRAR</button>
+          <h3 id="encryptedLabel" class="hidden">MENSAJE CIFRADO:</h3>
+          <p id="encryptedResult" class="hidden"></p>
+        </form>
+      </div>
+
+      <div class="box">
+        <h2>DESCIFRAR MENSAJE</h2>
+        <form id="decryptForm" onsubmit="event.preventDefault(); decryptMessage();">
+          <textarea id="inputCipherText" placeholder="Ingresa el mensaje cifrado aquí..." required></textarea>
+          <button type="submit">DESCIFRAR</button>
+          <h3 id="decryptedLabel" class="hidden">MENSAJE DESCIFRADO:</h3>
+          <p id="decryptedResult" class="hidden"></p>
+        </form>
       </div>
     </div>
+  </div>
 
-    <div id="notification" class="notification hidden"></div>
+  <footer class="footer">
+    <p>&copy; 2024 Cifrado AES CTR. Todos los derechos reservados.</p>
+    <p><a href="#">Política de Privacidad</a> | <a href="#">Términos y Condiciones</a></p>
+    <div class="social-icons">
+      <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+      <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+    </div>
+  </footer>
 
-    <script src="script.js"></script>
-  </body>
+
+
+  <div id="notification" class="notification hidden"></div>
+  <script src="script.js"></script>
+</body>
+
 </html>

@@ -1,69 +1,115 @@
+/* Fondo degradado moderno */
 body {
-  font-family: "Arial", sans-serif;
+  background: linear-gradient(135deg, #0066cc, #00bcd4); /* Degradado de azul y verde agua */
+  font-family: 'Roboto', sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f4f7fc;
-  color: #333;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-}
-
-.container {
-  max-width: 800px;
-  width: 100%;
-  margin: 30px auto;
-}
-
-.main-title {
-  text-align: center;
-  color: #4a90e2;
-  margin-bottom: 20px;
-  font-size: 2rem;
-  text-transform: uppercase;
-}
-
-.boxes-container {
-  display: flex;
-  justify-content: space-between;
-}
-
-.box {
-  flex: 1;
-  margin: 10px;
-  padding: 20px;
-  background-color: #f9f9f9;
-  border-radius: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  display: flex;
+  min-height: 100vh;
+  color: #fff;
   flex-direction: column;
 }
 
+/* Caja principal con bordes redondeados y sombra sutil */
+.container {
+  background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco semi-transparente */
+  padding: 40px 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 850px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+}
+
+/* Título principal */
+.main-title {
+  color: #4a90e2;
+  margin-bottom: 40px;
+  font-size: 3rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  animation: fadeIn 1s ease-out;
+}
+
+/* Animación de fade-in para el título */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Contenedor de las cajas de formularios (Cifrar/Descifrar) */
+.boxes-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+/* Caja para los formularios */
+.box {
+  flex: 1;
+  margin: 10px;
+  padding: 25px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  max-width: 420px;
+  transition: transform 0.3s ease-in-out;
+  opacity: 0;
+  animation: slideIn 0.5s ease-out forwards;
+}
+
+/* Animación para la aparición de las cajas */
+@keyframes slideIn {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Hover para las cajas de formularios */
+.box:hover {
+  transform: translateY(-5px);
+}
+
+/* Títulos dentro de las cajas */
 h2 {
   color: #4a90e2;
-  margin-top: 0;
-  font-size: 1.5rem;
-  text-align: center;
+  font-size: 1.6rem;
+  margin-bottom: 15px;
+  font-weight: 600;
 }
 
-h3 {
-  color: #4a90e2;
-  margin-top: 20px;
-  font-size: 1.2rem;
-  text-align: center;
-}
-
+/* Área de texto */
 textarea {
   width: 100%;
   padding: 12px;
-  margin: 10px 0;
+  margin: 15px 0;
   border-radius: 8px;
   border: 1px solid #ddd;
-  font-size: 1rem;
+  font-size: 1.1rem;
   background-color: #f9f9f9;
-  box-sizing: border-box;
   transition: all 0.3s ease;
+  min-height: 120px;
+  font-family: 'Roboto', sans-serif;
 }
 
 textarea:focus {
@@ -72,9 +118,10 @@ textarea:focus {
   outline: none;
 }
 
+/* Botones */
 button {
-  padding: 12px 20px;
-  font-size: 1rem;
+  padding: 14px 20px;
+  font-size: 1.1rem;
   background-color: #4a90e2;
   color: white;
   border: none;
@@ -82,27 +129,34 @@ button {
   cursor: pointer;
   width: 100%;
   transition: all 0.3s ease;
+  margin-top: 10px;
+  font-weight: 600;
 }
 
 button:hover {
   background-color: #357ab7;
+  transform: scale(1.05);
 }
 
 button:active {
-  transform: translateY(2px);
+  transform: translateY(2px); /* Hace que el botón parezca presionado */
+  background-color: #0066cc; /* Cambia el color cuando se presiona */
 }
 
+/* Resultados (Cifrado/Descifrado) */
 p {
   background-color: #f2f8ff;
-  padding: 12px;
+  padding: 15px;
   border-radius: 8px;
   border: 1px solid #ddd;
-  font-size: 1rem;
+  font-size: 1.1rem;
   word-wrap: break-word;
   white-space: pre-wrap;
   margin-bottom: 20px;
+  color: #333;
 }
 
+/* Notificaciones (mensajes de error o éxito) */
 .notification {
   position: fixed;
   top: 20px;
@@ -129,15 +183,111 @@ p {
   display: none;
 }
 
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+.footer {
+  width: 150%;
+  height: 200px; /* Altura fija */
+  padding: 40px 20px;
+  background: linear-gradient(145deg, #0066cc, #00bcd4); 
+  color: #f0f0f0;
+  text-align: center;
+  position: relative;
+  bottom: 0;
+  margin-top: 50px;
+  box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.2);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.fade-in {
-  animation: fadeIn 1s ease-out;
+
+/* Estilo de los textos */
+.footer p {
+  font-size: 1.2rem;
+  margin: 5px 0;
+  font-weight: 500;
+  color: #357ab7; /* Asegurando que el texto sea blanco */
+  letter-spacing: 0.5px;
+}
+
+.footer a {
+  color: #357ab7; /* Color suave para el texto */
+  text-decoration: none;
+  margin: 10px 20px;
+  font-weight: 500;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+}
+
+.footer a:hover {
+  color: #ffab00; /* Amarillo mostaza en hover */
+  text-decoration: underline;
+  transform: scale(1.05); /* Sutil efecto de aumento */
+}
+
+/* Contenedor de íconos sociales */
+.footer .social-icons {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.footer .social-icons a {
+  margin: 0 15px;
+  font-size: 1.7rem;
+  color: #ffffff;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.footer .social-icons a:hover {
+  transform: scale(1.3); /* Efecto de agrandar los íconos */
+  color: #ffab00; /* Amarillo en hover */
+}
+
+/* Media queries para pantallas pequeñas */
+@media (max-width: 768px) {
+  .footer {
+    padding: 30px 15px;
+  }
+
+  .footer p {
+    font-size: 1rem;
+  }
+
+  .footer a {
+    font-size: 1rem;
+  }
+
+  .footer .social-icons a {
+    font-size: 1.5rem;
+  }
+}
+/* Contenedor del logo en la esquina superior derecha */
+.logo-container {
+  position: fixed; 
+  top: 20px; 
+  right: 20px; 
+  z-index: 1000;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Estilo de la imagen */
+.logo {
+  width: 90px; 
+  height: auto; 
+  border-radius: 10px; 
+  transition: transform 0.3s ease; 
+}
+
+/* Efecto hover en el logo */
+.logo:hover {
+  transform: scale(1.1); 
+}
+
+/* Responsividad para el logo en pantallas pequeñas */
+@media (max-width: 600px) {
+  .logo {
+    width: 70px; /* Reducción de tamaño en pantallas pequeñas */
+  }
 }
